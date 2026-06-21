@@ -1,0 +1,62 @@
+[17:14 2026-06-21]
+
+ฮัลโหลคุณเจมี่ (GEMINI) ช่วยเขียนโค้ดให้ผมหน่อย
+เป็น custom tools สำหรับ Maya นะ 
+.
+- เขียนด้วยภาษา Python 2.7 ที่ Maya 2020 รองรับ
+- ให้ชื่อว่า KBS_CleanupKit
+- สร้างเป็น หน้าต่าง UI ตามภาพ
+- เอาใส่ shelf แล้วกดรัน
+.
+- ใส่ Header Code ตามนี้
+# -----------------------------------------------------------------------------
+# Script: KBS_CleanupKit
+# Date: 2026-06-21
+# GitHub: https://github.com/kabinski/kbs-maya-tools
+# Sketchfab: https://sketchfab.com/johnniewhiskey
+#
+# -----------------------------------------------------------------------------
+# Description:
+# ..........
+.
+- ฝากใส่ # comment อธิบายการใช้งานโค้ดเป็นภาษาอังกฤษ (เพื่อเผยแพร่แบบสากล) 
+- ฝากใส่ Tool Tip ใน button ด้วย
+.
+ดูแล้วก็คงจะเข้าใจไม่ยากใช่มั้ยล่ะ 
+เดี๋ยวผมจะอธิบายโลจิกการทำงานของแต่ละปุ่มที่ต้องการให้นะ 
+.
+[Cleanup Namespace]
+- กดแล้วจะลบ Namespace ทั้งหมดใน scene ทิ้ง
+.
+[Cleanup HIK]
+- กดแล้วจะลบ HIK definition ที่ไม่มี joint assign อยู่เลยทิ้งให้หมด
+.
+[Cleanup Duplicate Material(s)]
+- กดแล้วจะทำการค้นหา material ที่น่าจะซ้ำกัน 
+โดยดูจากชื่อ ตัวอย่างเช่น body_mat , body_mat1 , body_mat2 ... 
+ลักษณะนี้จะเป็น material ที่ซ้ำซ้อนกันจากการ import scence หลายครั้ง 
+ให้ทำการ assign body_mat เข้าไปแทน body_mat1 , body_mat2 
+แล้วลบ body_mat1 , body_mat2 ทิ้งซะ
+.
+[Create Label typeMesh from File Name]
+- สร้าง typeMesh ให้ชื่อ "Label_typeMesh"
+เอาไว้แปะกำกับคลิปอนิเมชั่นใน scene เพื่อกันความสับสนเวลาทำงานกับ animation clip จำนวนมาก
+.
+- โดย text ข้างในคือ "Filename" + " ##f" (ชื่อไฟล์ที่เปิดอยู่ ตามด้วยเลขเฟรมสุดท้าย)
+.
+กำหนด Font = Arial Black , Font Size = 12 , Alignment = Center , Enable Extrusion = False
+จากนั้นยกขึ้นไปบนหัวคาแรคเตอร์ Translate Y = 210
+.
+สมมุติไฟล์ชื่อ hero_1_walk_start_loop_f.mb มี 30 เฟรม 
+กดปุ่มแล้วก็จะได้ typeMesh แปะคำว่า "hero_1_walk_start_loop_f 30f" อยู่บนหัวคาแรคเตอร์
+.
+[Open [Optimize Scene Size] Window]
+ปุ่มนี้ไว้เปิดหน้าต่าง Optimize Scene Size ของ Maya ขึ้นมา
+ใส่ไว้เพื่อความสะดวกเฉยๆ 
+.
+ฝากด้วยนะคุณเจมี่! 
+===========================================================
+===========================================================
+===========================================================
+===========================================================
+
